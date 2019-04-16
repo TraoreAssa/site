@@ -2,10 +2,11 @@
     body {
         background: linear-gradient(to top, rgb(204, 166, 164), rgb(199, 102, 102));
         color: white;
-
+        width: 99.8%;
     }
-     /* NAV */
-     .menu {
+
+    /* NAV */
+    .menu {
         width: 100%;
         margin: 0;
         padding: 0;
@@ -13,7 +14,7 @@
         max-height: 0px;
         overflow-y: hidden;
         text-align: center;
-        
+
     }
 
     .menu li {
@@ -22,9 +23,9 @@
     }
 
     .menu li:hover {
-      
+
         cursor: pointer;
-        
+
     }
 
     .menu a {
@@ -90,8 +91,7 @@
 
     /* Fin de la NAV */
 
-    .container 
-    {
+    .container {
         overflow-y: hidden;
         border-radius: 10px;
         margin-top: 5px;
@@ -102,12 +102,16 @@
         background-color: #000014;
     }
 
-    section
-    {
-        padding: 2px;
-        margin: 10px;
+    footer {
+        box-shadow: 0 0 3px 5px;
+
     }
 
+    section {
+        padding: 2px;
+        margin: 10px;    
+    }
+ 
     /* Button a droite */
     .monter {
         position: fixed;
@@ -119,21 +123,23 @@
         border: none;
         bottom: 20px;
     }
+
     /* FIN  */
 
 
     h1 {
         color: white;
         margin-top: 20px;
-        font-size: 43px;
+        font-size: 90px;
     }
 
     h2 {
         color: white;
         /* color: rgb(199, 102, 102); */
         padding: 5px;
-     
+
     }
+
     a {
         color: inherit;
         text-decoration: none;
@@ -160,19 +166,19 @@
 
     .card {
         background: transparent;
-        border: 2px solid blue;
+        border: 2px solid white;
     }
 
     /* PROFIL */
     #profil .card {
         border-radius: 16px;
-        width: 660px;
-        height: 660px;
-        background: blue;
+        /* background: white; */
         position: relative;
         overflow: hidden;
         box-shadow: 0 5px 50px rgba(0, 0, 0, 0.85);
-        margin-top: 20px; 
+        margin-top: 20px;
+            border: 2px solid white;
+
     }
 
     #profil .card::before {
@@ -180,7 +186,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.92);
+        background-color: #000014;
     }
 
     #profil .card .img {
@@ -188,7 +194,7 @@
         width: 100%;
         height: 100%;
         display: flex;
-        top: 230px;
+        top: 180px;
 
     }
 
@@ -196,7 +202,7 @@
         /* width: 100%; */
         height: 100%;
         color: white;
-        font-size: 90px;
+        font-size: 70px;
         transition: 0.5s;
         bottom: 950px;
         padding: 0px;
@@ -206,7 +212,7 @@
     #profil .card .img span:nth-child(1) {
         transition-delay: 0s;
         background-position: 0;
-        
+
     }
 
     #profil .card .img span:nth-child(2) {
@@ -247,7 +253,7 @@
         transition-delay: 0.1s;
     }
 
-    span{
+    span {
         padding: 0px;
     }
 
@@ -278,19 +284,30 @@
     .comp:hover li:not(:hover) img {
         /*je mets ai survol de la classe comp je met les image en gris et en flou */
         filter: grayscale(1) blur(8px);
-        
+
     }
 
     /* Fin des compétences */
 
-    iframe 
-    {
+    #commentaires .blockquote{
+            width: 100%;
+            
+        }
+    iframe {
         box-shadow: 5px 5px 20px 3px pink;
+        width: 80%;
+        height: 300px;
+        border:0;
     }
 
 
     /* V mobile */
     @media screen and (min-width:970px) {
+
+        body{
+            margin: 0 auto;
+        }
+
         label.menuTitle {
             display: none;
         }
@@ -308,135 +325,55 @@
             border: none;
         }
 
+        h1{
+            /* font-size: 15px; */
+        }
+
+    }
+
+    @media (max-width: 650px)
+    {
+        body{
+            margin: 0 auto;
+        }
+        iframe{
+            width: 300px;
+        }
+        
         .section {
-            width: 100%;
+            width: 70%;
             justify: center;
         }
 
         /* Responsive */
 
 
-            body>p {
-                font-size: 20px;
-                text-align: justify;
-            }
-
-            body>p:after {
-                opacity: .8
-            }
-
-            header {
-                display: inline-block;
-                width: 100%;
-            }
-
-            #infos {
-                width: calc(100% - 42px);
-            }
-
-            section:first-of-type div select,
-            section:first-of-type div input {
-                display: block;
-                width: calc(100% - 40px);
-                margin: 20px;
-            }
-
-            table,
-            thead,
-            tbody,
-            th,
-            td,
-            tr {
-                display: block;
-                position: relative;
-                border: 0;
-                color: #333;
-            }
-
-            section:nth-of-type(2) tr:first-of-type td {
-                display: none;
-            }
-
-            section:nth-of-type(2) tr:nth-of-type(odd) td:nth-of-type(1) {
-                border-top: 5px solid #444;
-                border-radius: 5px 5px 0 0;
-                text-align: center;
-            }
-
-            section:nth-of-type(2) tr:nth-of-type(even) td:nth-of-type(1) {
-                border-top: 5px solid #aaa;
-                border-radius: 5px 5px 0 0;
-                text-align: center;
-            }
-
-            section:nth-of-type(2) tr:not(:first-of-type) {
-                border: 1px solid #eee;
-                margin-top: 50px;
-                border-radius: 5px;
-            }
-
-            section:nth-of-type(2) tr:not(:first-of-type) td:nth-of-type(1)::before {
-                content: "Code de produit:";
-                font-weight: bolder;
-                display: block;
-                width: calc(100% - 20px);
-                height: 50%;
-                left: 0;
-                top: 0;
-                padding: 10px;
-                margin-bottom: 10px;
-                color: #444;
-            }
-
-            section:nth-of-type(2) tr:nth-of-type(even) td:nth-of-type(1)::before {
-                content: "Code de produit:";
-                font-weight: bolder;
-                display: block;
-                width: calc(100% - 20px);
-                height: 50%;
-                left: 0;
-                top: 0;
-                padding: 10px;
-                margin-bottom: 10px;
-                color: #999;
-            }
-
-            section:nth-of-type(2) tr:not(:first-of-type) td:nth-of-type(2)::before {
-                content: "Libelle:";
-                font-weight: bolder;
-                padding: 10px;
-            }
-
-            section:nth-of-type(2) tr:not(:first-of-type) td:nth-of-type(3)::before {
-                content: "Prix:";
-                font-weight: bolder;
-                padding: 10px;
-            }
-
-            section:nth-of-type(2) tr:not(:first-of-type) td:nth-of-type(4)::before {
-                content: "Quantite:";
-                font-weight: bolder;
-                padding: 10px;
-            }
-
-            section:nth-of-type(2) tr:not(:first-of-type) td:nth-of-type(5)::before {
-                content: "Montant:";
-                font-weight: bolder;
-                padding: 10px;
-            }
-
-            section:nth-of-type(3) table {
-                margin: 50px 0;
-                width: 100%;
-                background: #eee;
-                border-radius: 5px;
-            }
-
-            section:nth-of-type(3) table tr:last-of-type td {
-                background: #eee;
-                border-radius: 0 0 5px 5px;
-            }
-
-
+        body>p {
+            font-size: 5px;
+            text-align: justify;
         }
+        
+        h1{
+            font-size: 300%;
+        }
+
+        body>p:after {
+            opacity: .8
+        }
+
+        header {
+            display: inline-block;
+            width: 100%;
+        }
+
+        #commentaires .row{
+            display: block;
+            width: 100%;
+            
+        }
+        .col{
+            width: 100%;
+        }
+
+    }
 </style>

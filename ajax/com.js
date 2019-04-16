@@ -3,7 +3,6 @@ $(document).ready(function(){
     $("#ajouter").click(function(event){
         // insert est le boutton pour valider le commentaire
         event.preventDefault();
-        alert('Vous aller rediriger vers le formulaire !');
         window.location="ajax/formulaire.php";
         
     });
@@ -25,6 +24,7 @@ $(document).ready(function(){
         var email = $("#email").val();
         var commentaire = $("#commentaire").val();
         var date = $("#date").val();
+        
 
         // console.log(pseudo + " " + email + '  ' +  commentaire + '  ' +  date);
         console.log(commentaire + '  ' );
@@ -38,7 +38,8 @@ $(document).ready(function(){
             $("#resultat").html(data.resultat);
         }, 'json');
 
-        $('#formulaire').trigger("reset");//reboot le formulaire apres insertion (efface les donnée aprés insertion)
+        // $('#formulaire').trigger("reset");
+        //reboot le formulaire apres insertion (efface les donnée aprés insertion)
         
     }
 

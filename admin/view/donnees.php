@@ -14,7 +14,7 @@
 </div> <br>
 
 
-<div class="row">
+<div class="row justify-content-center">
 
     <!----------- Récuperer les données interieur du tableau ----------->
     <?php
@@ -26,7 +26,7 @@
         // }
         ?>
 
-        <div class="card ">
+        <div class="card">
             <div class="card-body">
                 <div>
                     <p class="text-left">

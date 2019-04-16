@@ -9,9 +9,9 @@ require_once('init/init.php');
   <div >
 
     <div class="row justify-content-center">
-      <div class="card">
+      <div class="card rounded-circle" style='width: 30rem; height:30rem'>
         <div class="img justify-content-center">
-           <span>Pre</span>
+           <span>Pré</span>
            <span>sen</span>
            <span>ta</span>
            <span>tion:</span>
@@ -28,7 +28,7 @@ require_once('init/init.php');
 
             while ($photo = $result->fetch(PDO::FETCH_ASSOC)) {
               foreach ($photo as $key => $value) {
-                echo '<img src ="' . $value . '" alt="Mon Avatar"  width="300" height="300"/>';
+                echo '<img src ="' . $value . '" alt="Mon Avatar"  width="200" height="200"/>';
               }
             }
 
@@ -39,7 +39,7 @@ require_once('init/init.php');
           <br>
           
           <input type="button" class='bg-dark text-white p-2' value="Télécharger mon CV en PDF"
-            onclick="window.location='CV-Traore-Assa-Developpeur-Web.pdf'">
+            onclick="window.location='<?= $utilisateur['cv'] ?>'">
 
 
 

@@ -11,7 +11,7 @@
 <?php foreach ($donnees as $key=> $value):?>
 <li class="list-group-item text-center"><?=$value?></li>
 <?php endforeach;?>
-<li class="list-group-item text-center"> <a href="?op=update&id=<?=$donnees[$id] ?>" class="text-dark"><i class="fas fa-wrench"></i></a>
-<a href="?op=delete&id=<?=$donnees[$id] ?>" class="text-dark"><i class="fas fa-trash-alt"></i></a></li>
+<li class="list-group-item text-center"> <a href="?op=update&id=<?=$donnees[$id] ?>" class="text-dark"><i class="fas fa-wrench ic"></i></a>
+<a href="?op=delete&id=<?=$donnees[$id] ?>" class="text-dark"><i class="fas fa-trash-alt ic"></i></a></li>
 
 </ul>

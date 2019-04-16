@@ -26,7 +26,7 @@
         <label for="panel" class="menuTitle"></label>
         <div class="clear"></div>
     <ul class="menu"> 
-      <li><a href="index.php"><i class="fas fa-home"></i></a></li>
+      <li><a href="../index.php"><i class="fas fa-home"></i></a></li>
       <li><a href="utilisateur.php">Utilisateur</a></li>
       <li><a href="cv.php">Cv</a></li>
       <li><a href="experiences.php">Experiences</a></li>
@@ -35,13 +35,13 @@
       <li><a href="loisirs.php">Loisirs</a></li>
       <li><a href="photo.php">Photo</a></li>
       <li><a href="commentaires.php">Commentaires</a></li>
-      <li><a href="../index.php"><i class="fas fa-reply"></i></a></li>
+      <li><a href="index.php"><i class="fas fa-reply"></i></a></li>
     </ul>
   </nav>
 
   <h1 class="display-4 text-center mt-4"><?= $title ?></h1>
 
-  <div class="container">
+  <div class="container justify-content-center">
     <?= $content ?>
   </div>
 

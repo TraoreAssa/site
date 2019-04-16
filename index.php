@@ -13,10 +13,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- JS Commentaires -->
-    <!-- <script src="Ajax-commentaires/com.js"></script> -->
-    <!-- <script src="Ajax-commentaires/com.js"></script> -->
-
 
     <title>Site Portfolio</title>
 </head>
@@ -59,8 +55,7 @@
     
     // recuperation des Commentaires
     require('ajax/index.php');
-    // require('Ajax-commentaires/commentaires.php');
-    // require_once('CV/Ajax-commentaires/formulaire.php');
+   
     
     ?>
 
@@ -68,12 +63,12 @@
     <a href="#profil"><button class="monter" type="button"><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></button></a>
 
     <!-- FOOTER -->
-    <footer class=" footer bg-dark text-center text-white p-2">
+    <footer class=" footer text-center text-white p-2">
         &copy; 2019 - Assa TRAORE - Mon site Portfolio <span class="text-white"> <a href="admin/index.php" color='black'>.</a></span>
 
         <div class="text-center">
             <a href="http://facebook.com"><i class="fab fa-facebook-square fa-3x p-3 text-white"></i></a>
-            <a href="https://fr.linkedin.com"><i class="fab fa-linkedin fa-3x p-3 text-white"></i></a>
+            <a href="https://www.linkedin.com/in/assa-traore-911075173/"><i class="fab fa-linkedin fa-3x p-3 text-white"></i></a>
             <a href="https://github.com/TraoreAssa"><i class="fab fa-github-square fa-3x p-3  text-white"></i></a>
         </div>
 

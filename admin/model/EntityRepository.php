@@ -50,33 +50,35 @@ class EntityRepository
 
   
   /************ CONNEXION ... ************/
-    public function connexion($pseudo, $mdp)
-    {
-        $q = $this->getDb()->query("SELECT pseudo FROM " . $this->table . " WHERE mdp = '$mdp' AND pseudo = '$pseudo' ");
-        $r = $q->fetch(\PDO::FETCH_ASSOC);
-        return $r;
-    }
+    // public function connexion($pseudo, $mdp)
+    // {
+    //     $q = $this->getDb()->query("SELECT pseudo FROM " . $this->table . " WHERE mdp = '$mdp' AND pseudo = '$pseudo' ");
+    //     $r = $q->fetch(\PDO::FETCH_ASSOC);
+    //     return $r;
+    // }
   
   
   /************ AFFICHE TOUT ... ************/
       public function selectAll()
       {
-          $q = $this->getDb()->query("SELECT * FROM " . $this->table); // selectionner toute une table, 
+          $q = $this->getDb()->query("SELECT id_utilisateur, nom, prenom, email, adresse, code_postal, ville, pays, telephone, site_web FROM " . $this->table); // selectionner toute une table, 
+        //   $q = $this->getDb()->query("SELECT * FROM " . $this->table); // selectionner toute une table, 
           $r = $q->fetchAll(\PDO::FETCH_ASSOC);
           return $r;
+        //   return $r;
       }
   
   /************ AJOUTER ET MODIFIER (REMPLACE si id est n'est pas nul) ************/
       public function save()
       {
-        $mdp = $_POST['mdp'];
+        // $mdp = $_POST['mdp'];
           $id = isset($_GET['id']) ? $_GET['id'] : 'NULL'; // verifie si id n'est pas nul pour ajouter ou motifier
           $q = $this->getDB()->query('REPLACE INTO ' . $this->table . '(id'. '_' . $this->table . ',' .  implode(',', array_keys($_POST)). ') VALUES (' . $id . ',' . "'"  . implode("','", $_POST) . "'" . ')');
       }
       
   
   /************ AFFICHER UN .... ************/
-      public function select($id) // Méthode permetant de recuperer les données d'un Vehicule via id
+      public function select($id) // Méthode permetant de recuperer les données d'un Vehicule via id 
       {
           $q = $this->getDb()->query("SELECT * FROM " . $this->table . " WHERE id".'_'. $this->table . "=" . $id);
           $r = $q->fetch(\PDO::FETCH_ASSOC);
@@ -88,8 +90,7 @@ class EntityRepository
       {
           $q = $this->getDb()->query("DELETE FROM " . $this->table . " WHERE id".'_' . $this->table. '=' .$id);
       }
-
-    
+      
   }
 
 

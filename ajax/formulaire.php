@@ -30,7 +30,7 @@
 
         <div id="resultat"></div>
         
-        <form methode = "post" id="formulaire" class = "col-md-6 offset-md-3 my-3">
+        <form methode = "post" id="formulaire"  class = "col-md-6 offset-md-3 my-3">
             <div class="form-group">
 
                 <label for="exampleInputEmail1">Pseudo</label>
@@ -39,6 +39,9 @@
 
                 <label for="exampleInputEmail1">Email</label>
                 <input type="email" class="form-control" id="email" name ="email" placeholder="Votre email" required >
+                <!-- <br> 
+                <label for="exampleInputEmail1">mdp</label>
+                <input type="password" class="form-control" id="mdp" name ="mdp" placeholder="Votre email" required > -->
                 <br> 
                 
                 <label for="exampleInputEmail1">Date et Heure</label>

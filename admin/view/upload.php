@@ -1,4 +1,3 @@
-<div class="container">
     <?php
 
     // echo '<pre>';    
@@ -46,12 +45,11 @@
 
         foreach ($fields as $value) :
             if ($value['Field'] == "photo") {
-                $type = 'file'; 
-        }
-        else{
-            $type = "text";
-        }
-                
+                $type = 'file';
+            } else {
+                $type = "text";
+            }
+
             ?>
             <div class="form-group">
                 <label for="<?= $value['Field'] ?>"><?= $value['Field'] ?></label>
@@ -65,7 +63,7 @@
 
     </form>
 
-    <div class="row">
+    <div class="justify-content-center">
 
         <!------------------------------ Récuperer les données ------------------------------>
 
@@ -97,4 +95,3 @@
                 </div>
             </div>
         <?php endforeach; ?>
-    </div>

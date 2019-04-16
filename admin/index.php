@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css"
     integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
 <!-- CSS -->
-<!-- <?php //require_once('app/style.php'); ?> -->
+<!-- <?php //require_once('../init/style.php'); ?> -->
 
   <title>Site PortFolio Assa</title>
 </head>
@@ -62,11 +62,11 @@ if (isset($_POST['formconnexion']))
     <a class="navbar-brand text-white text-center" href="../index.php"><i class="fas fa-reply"></i></a>
   </nav>
 
-  <div class="container">
+  <!-- <div class="container"> -->
     <h1 class="display-4 text-center mt-4">Connexion</h1>
   
 
-    <div class="card text-center col-md-8 offset-md-2" style="width: 50rem;">
+    <div class="card text-center col-md-8 offset-md-2">
       <div class="card-body">
         <form method="post" action="">
           <div class="form-group">
