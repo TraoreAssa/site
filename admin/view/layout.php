@@ -22,10 +22,10 @@
 <body>
 
   <nav class="mainMenu" id="maNav">
-  <input type="checkbox" name="panel" class="hidden" id="panel">
-        <label for="panel" class="menuTitle"></label>
-        <div class="clear"></div>
-    <ul class="menu"> 
+    <input type="checkbox" name="panel" class="hidden" id="panel">
+    <label for="panel" class="menuTitle"></label>
+    <div class="clear"></div>
+    <ul class="menu">
       <li><a href="../index.php"><i class="fas fa-home"></i></a></li>
       <li><a href="utilisateur.php">Utilisateur</a></li>
       <li><a href="cv.php">Cv</a></li>

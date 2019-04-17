@@ -35,7 +35,7 @@
 
     ?>
 
-    <form method="post" action="" enctype="multipart/form-data" class="col-md-6 offset-md-3 text-center">
+    <form method="post" class="col-md-6 offset-md-3 text-center">
         <?php
 
         // echo "<pre>";
@@ -49,6 +49,8 @@
             } else {
                 $type = "text";
             }
+
+
 
             ?>
             <div class="form-group">
@@ -73,7 +75,7 @@
 
             ?>
             <div class="card ">
-                <div class="card-body left justify-content-center">
+                <div class="card-body">
                     <div>
                         <p>
                             <?= implode('</p><p>', $value) ?>
