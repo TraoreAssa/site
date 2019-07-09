@@ -1,32 +1,11 @@
-<?php
- // echo '<pre>'; print_r($fields); echo '</pre>';
-
-
-//  function securisation($donnees){
-//     $donnees = trim($donnees);
-//     $donnees = stripcslashes($donnees);
-//     $donnees = strip_tags($donnees);
-//     return $donnees ;
-// }
-
-// $secu = securisation($_POST['Field']);
-// $prenoms = securisation($_POST['prenoms']);
-
-
-?>
-
 <form method="post" class="col-md-6 offset-md-3 text-center">
 
     <?php
-
     // echo "<pre>";
     // print_r($fields);
     // echo "</pre>";
 
-
     foreach ($fields as $value) :
-
-      
 
         if ($value['Field'] == "code_postal") {
             $maxlength = '5';
@@ -35,12 +14,6 @@
         } else {
             $maxlength = null;
         }
-
-
-
-        // if($value['Field'] == "mdp"){
-        //     sha1($value['mdp']);
-        // }
 
         switch ($value['Field']) {
             case "mdp":
@@ -55,12 +28,13 @@
             default:
                 $type = 'text';
         }
-        
+
+        $valu = addslashes($value['Field']);
 
         ?>
-    <div class="form-group">
-        <label for="<?= $value['Field'] ?>"><?= $value['Field'] ?></label>
-        <input type="<?= $type ?>" class="form-control" name="<?= $value['Field'] ?>" id="<?= $value['Field'] ?>" aria-describedby="<?= $value['Field'] ?>" placeholder="<?= $value['Field'] ?>" maxlength="<?= $maxlength ?>" value="<?= ($op == 'update') ? $values[$value['Field']] : '' ?>" required>
+        <div class="form-group">
+            <label for="<?= $value['Field'] ?>"><?= $value['Field'] ?></label>
+            <input type="<?= $type ?>" class="form-control" name="<?= $value['Field'] ?>" id="<?= $value['Field'] ?>" aria-describedby="<?= $value['Field'] ?>" placeholder="<?= $value['Field'] ?>" maxlength="<?= $maxlength ?>" value="<?= ($op == 'update') ? $values[$valu] : '' ?>" required>
 
         <?php endforeach; ?>
 
@@ -73,5 +47,5 @@
 
 
 <?php
- // echo '<pre>';print_r($fields); echo '</pre>';
-?> 
+// echo '<pre>';print_r($fields); echo '</pre>';
+?>

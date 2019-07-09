@@ -1,22 +1,27 @@
 $(document).ready(function(){
    
     $("#ajouter").click(function(event){
-        // insert est le boutton pour valider le commentaire
+        // insert est le button pour ajouter un commentaire
         event.preventDefault();
         window.location="ajax/formulaire.php";
         
     });
 
+    $("#annuler").click(function(event){
+        // insert est le boutton pour Annuler un commentaire
+        event.preventDefault();
+        window.location="../index.php";
+        
+    });
+
+
     $("#insert").click(function(event){
         // insert est le boutton pour valider le commentaire
         event.preventDefault();
+        ajax();        
 
-        alert('Votre commentaire a bien été enregistré, Je vous remercie!');
-
-        window.location="../index.php";
-        ajax();
     });
-    
+
     
     //Joint COM.php (Insertion dans la BDD) et les champs du form
     function ajax (){
@@ -25,9 +30,9 @@ $(document).ready(function(){
         var commentaire = $("#commentaire").val();
         var date = $("#date").val();
         
-
+    
         // console.log(pseudo + " " + email + '  ' +  commentaire + '  ' +  date);
-        console.log(commentaire + '  ' );
+        // console.log(commentaire + '  ' );
 
         var parameters = "commentaire="+commentaire + "&date="+date + "&pseudo="+pseudo + "&email="+email; 
 
@@ -40,6 +45,9 @@ $(document).ready(function(){
 
         // $('#formulaire').trigger("reset");
         //reboot le formulaire apres insertion (efface les donnée aprés insertion)
+
+        // window.setTimeout("location=('../index.php');",5000);
+
         
     }
 

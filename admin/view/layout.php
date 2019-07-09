@@ -34,6 +34,7 @@
       <li><a href="realisations.php">Réalisations - Compétences</a></li>
       <li><a href="loisirs.php">Loisirs</a></li>
       <li><a href="photo.php">Photo</a></li>
+      <li><a href="contact.php">Contact</a></li>
       <li><a href="commentaires.php">Commentaires</a></li>
       <li><a href="index.php"><i class="fas fa-reply"></i></a></li>
     </ul>

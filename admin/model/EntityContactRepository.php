@@ -1,7 +1,7 @@
 <?php
 namespace model;
 // Dans ce ficher nous allons faire les connexion a la BDD (SELECT, INSERT, REMPLACE, DELETE) les fonctions sont aussi dans le CONTROLLER
-class EntityExperiencesRepository
+class EntityContactRepository
 {
     private $db;
     public $table;
@@ -13,7 +13,7 @@ class EntityExperiencesRepository
             try {
                 $xml = simplexml_load_file('app/config.xml'); //simplexml_load_file transforme mon fichier XML en objet
                 // echo '<pre>'; var_dump($xml); echo '</pre>';
-                $this->table = $xml->table5; // on associe le nom de la table du fichier XML a la propriété de la classe
+                $this->table = $xml->table10; // on associe le nom de la table du fichier XML a la propriété de la classe
                 try 
                     //------------------------ CONNEXION AVEC LA BDD ------------------------
                 { 
@@ -55,11 +55,7 @@ class EntityExperiencesRepository
 /************ AJOUTER ET MODIFIER (REMPLACE si id est n'est pas nul) ************/
     public function save()
     {
-        if ($_POST["'"]) {
-            $_POST["\'"];
-        }
         $id = isset($_GET['id']) ? $_GET['id'] : 'NULL'; // verifie si id n'est pas nul pour ajouter ou motifier
-        
         $q = $this->getDB()->query('REPLACE INTO ' . $this->table . '(id_' . $this->table . ',' .  implode(',', array_keys($_POST)). ') VALUES (' . $id . ',' . "'"  . implode("','",str_replace("'","\'", $_POST)) . "'" . ')');
     }
 
@@ -78,7 +74,7 @@ class EntityExperiencesRepository
     }
 }
 
-$a = new EntityExperiencesRepository; 
+$a = new EntityContactRepository; 
 $a->getDb();
 
 

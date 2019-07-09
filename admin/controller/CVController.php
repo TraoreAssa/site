@@ -53,13 +53,7 @@ class CVController
     {
         header("Location:" . $url); // fonction prédefinie permettant d'effectuer une redirection
     }
-   
-
-    public function loisirs()
-    {
-        $this->render('layout.php', 'loisirs.php');
-    }
-    
+  
     //------------------------------------------ AFFICHER TOUT LES DONNEES ------------------------------------------
     public function selectAll()
     {

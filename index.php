@@ -1,85 +1,151 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Site Portfolio 2019</title>
 
-    <!-- Font Awseome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- Font Awseome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-    <title>Site Portfolio</title>
+  <script src="ajax/script.js"></script>
+  <script src="contact/contact.js"></script>
+
 </head>
 
-<body>
+<?php
+require_once('init/init.php');
+//BDD
+require_once('init/style.php');
+//CSS 
+?>
 
-    <nav class="navbar mainMenu" id="maNav">
-        <input type="checkbox" name="panel" class="hidden" id="panel">
-        <label for="panel" class="menuTitle"></label>
-        <div class="clear"></div>
-        <ul class="menu">
-            <li><a class="navbar-brand" href="#profil">Profil</a></li>
-            <li><a class="navbar-brand" href="#experiences">Experiences</a></li>
-            <li><a class="navbar-brand" href="#competences">Compétences</a></li>
-            <li><a class="navbar-brand" href="#formations">Formations</a></li>
-            <li><a class="navbar-brand" href="#contact">Contact</a></li>
-            <li><a class="navbar-brand" href="#commentaires">Commentaires</a></li>
-        </ul>
+<body>
+  <!-- Profil -->
+  <section id="profil">
+    <?php
+    require_once('profil.php');
+    ?>
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li><a class="js-scrollTo" href="#profil">Profil</a></li>
+        <li><a class="js-scrollTo" href="#experiences">Experiences</a></li>
+        <li><a class="js-scrollTo" href="#competences">Compétences</a></li>
+        <li><a class="js-scrollTo" href="#formations">Formations</a></li>
+        <li><a class="js-scrollTo" href="#contact">Contact</a></li>
+        <li><a class="js-scrollTo" href="#avis">Avis</a></li>
+      </ul>
     </nav>
 
+  </section>
+  <!-- Fin Profil + nav -->
 
-    <?php
-    // recuperation de Profil
-    require_once('CV/profil.php');
+  <!-- Section Experiences -->
+  <section id="experiences">
 
-    // recuperation de Style
-    require_once('init/style.php');
+    <ul class="menu">
 
-    // recuperation de Experiences
-    require_once('CV/experiences.php');
+    <!-- Revenir a la section d'avant  -->
+      <li><a class="js-scrollTo haut" href="#profil"><i class="fas fa-angle-double-up"></i> Profil <i class="fas fa-angle-double-up"></i> </a></li>
 
-    // recuperation de Formations
-    require_once('CV/formations.php');
+      <?php
+      require_once('experiences.php');
+      ?>
 
-    // recuperation de Competences
-    require_once('JavaScript/competences.php');
+    <!-- Aller a la section d'apres  -->
+      <li><a class="js-scrollTo bas" href="#competences"> <i class="fas fa-angle-double-down"></i> Compétences <i class="fas fa-angle-double-down"></i></a></li>
 
-    // recuperation de Contact
-    require_once('CV/contact.php');
-    
-    // recuperation des Commentaires
-    require('ajax/index.php');
-   
-    
-    ?>
+    </ul>
+  </section>
+  <!-- Fin d'Experiences -->
 
-    <!-- Boutton poure remonter -->
-    <a href="#profil"><button class="monter" type="button"><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></button></a>
+  <!-- Section Compétences -->
+  <section id="competences">
+    <ul class="menu">
 
-    <!-- FOOTER -->
-    <footer class=" footer text-center text-white p-2">
-        &copy; 2019 - Assa TRAORE - Mon site Portfolio <span class="text-white"> <a href="admin/index.php" color='black'>.</a></span>
+    <!-- Revenir a la section d'avant  -->
+      <li><a class="js-scrollTo haut" href="#experiences"><i class="fas fa-angle-double-up"></i> Experiences <i class="fas fa-angle-double-up"></i></a></li>
 
-        <div class="text-center">
-            <a href="http://facebook.com"><i class="fab fa-facebook-square fa-3x p-3 text-white"></i></a>
-            <a href="https://www.linkedin.com/in/assa-traore-911075173/"><i class="fab fa-linkedin fa-3x p-3 text-white"></i></a>
-            <a href="https://github.com/TraoreAssa"><i class="fab fa-github-square fa-3x p-3  text-white"></i></a>
-        </div>
+      <?php
+      require_once('competences.php');
+      ?>
 
-    </footer>
+      <li><a class="js-scrollTo bas" href="#formations"><i class="fas fa-angle-double-down"></i> Formations <i class="fas fa-angle-double-down"></i></a></li>
 
+    </ul>
+  </section>
+  <!-- Fin Compétences -->
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- Section Formations -->
+  <section id="formations">
+    <ul class="menu">
+
+    <!-- Revenir a la section d'avant  -->
+      <li><a class="js-scrollTo haut" href="#competences"><i class="fas fa-angle-double-up"></i> Compétences <i class="fas fa-angle-double-up"></i></a></li>
+
+      <?php
+      require_once('formations.php');
+      ?>
+
+      <li><a class="js-scrollTo bas" href="#contact"><i class="fas fa-angle-double-down"></i> Contact <i class="fas fa-angle-double-down"></i></a></li>
+
+    </ul>
+  </section>
+  <!-- Fin Formations -->
+
+  <!-- Section Contact -->
+  <section id="contact">
+    <ul class="menu">
+
+    <!-- Revenir a la section d'avant  -->
+      <li><a class="js-scrollTo haut" href="#formations"><i class="fas fa-angle-double-up"></i> Formations <i class="fas fa-angle-double-up"></i></a></li>
+
+      <?php
+      require_once('contact/contact.php');
+      ?>
+
+      <!-- <li><a class="js-scrollTo bas" href="#avis"><i class="fas fa-angle-double-down"></i> Avis <i class="fas fa-angle-double-down"></i></a></li> -->
+
+    </ul>
+  </section>
+  <!-- Fin Contact -->
+
+  <!-- Section Avis -->
+  <!-- <section id="avis">
+    <ul class="menu">
+
+      <li><a class="js-scrollTo haut" href="#contact"><i class="fas fa-angle-double-up"></i> Contact <i class="fas fa-angle-double-up"></i></a></li>
+     
+      <?php
+      // require_once('ajax/index.php');
+      ?>
+
+    </ul>
+  </section> -->
+  <!-- Fin Avis -->
+
+  <footer class=" footer text-center text-white p-2">
+    &copy; 2019 - Assa TRAORE - Mon site Portfolio <span class="text-white"> <a href="admin/index.php">.</a></span>
+  <!-- Reseaux Sociaux -->
+  <div class="text-center">
+        <a href="http://facebook.com" target="_blank"><i class="fab fa-facebook-square fa-3x p-3 text-white"></i></a>
+        <a href="https://www.linkedin.com/in/assa-traore-911075173/" target="_blank"><i class="fab fa-linkedin fa-3x p-3 text-white"></i></a>
+        <a href="https://github.com/TraoreAssa" target="_blank"><i class="fab fa-github-square fa-3x p-3  text-white"></i></a>
+        <a href="https://github.com/TraoreAssa" target="_blank"><i class="fab fa-github-square fa-3x p-3  text-white"></i></a>
+      </div>
+      <!-- RS -->
+  
+  </footer>
+
 </body>
 
 </html>

@@ -61,7 +61,7 @@ class EntityRepository
   /************ AFFICHE TOUT ... ************/
       public function selectAll()
       {
-          $q = $this->getDb()->query("SELECT id_utilisateur, nom, prenom, email, adresse, code_postal, ville, pays, telephone, site_web FROM " . $this->table); // selectionner toute une table, 
+          $q = $this->getDb()->query("SELECT id_utilisateur, nom, prenom, email, adresse, code_postal, ville, telephone,description, site_web FROM " . $this->table); // selectionner toute une table, 
         //   $q = $this->getDb()->query("SELECT * FROM " . $this->table); // selectionner toute une table, 
           $r = $q->fetchAll(\PDO::FETCH_ASSOC);
           return $r;
@@ -73,7 +73,8 @@ class EntityRepository
       {
         // $mdp = $_POST['mdp'];
           $id = isset($_GET['id']) ? $_GET['id'] : 'NULL'; // verifie si id n'est pas nul pour ajouter ou motifier
-          $q = $this->getDB()->query('REPLACE INTO ' . $this->table . '(id'. '_' . $this->table . ',' .  implode(',', array_keys($_POST)). ') VALUES (' . $id . ',' . "'"  . implode("','", $_POST) . "'" . ')');
+          
+          $q = $this->getDB()->query('REPLACE INTO ' . $this->table . '(id_' . $this->table . ',' .  implode(',', array_keys($_POST)). ') VALUES (' . $id . ',' . "'"  . implode("','",str_replace("'","\'", $_POST)) . "'" . ')');
       }
       
   

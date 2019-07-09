@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  lun. 08 avr. 2019 à 11:02
--- Version du serveur :  10.1.38-MariaDB
--- Version de PHP :  7.2.15
+-- Généré le :  jeu. 25 avr. 2019 à 16:07
+-- Version du serveur :  10.1.37-MariaDB
+-- Version de PHP :  7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,9 +30,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `commentaires` (
   `id_commentaires` int(3) NOT NULL,
-  `pseudo` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `commentaire` text,
+  `pseudo` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `commentaire` text NOT NULL,
   `date` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -41,9 +41,21 @@ CREATE TABLE `commentaires` (
 --
 
 INSERT INTO `commentaires` (`id_commentaires`, `pseudo`, `email`, `commentaire`, `date`) VALUES
-(2, 'dszd', 'assa@g.c', 'dddddd', ' 28-03-2019 - 09:15:47 '),
-(3, 'biss', 'q@z.z', 'qfesgr', ' 29-03-2019 - 10:02:56 '),
-(4, 'dszd', 'assa@g.c', 'ghcddxgfcb', ' 29-03-2019 - 14:54:09 ');
+(1, 'Biss', 'assa.traore@lepoles.com', 'Ce site est faite avec les langages HTML, CSS, PHP, JS.\nj\'ai beaucoup mon site. il a  ', ' 23-04-2019 - 16:54 ');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id_contact` int(3) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -93,7 +105,7 @@ CREATE TABLE `formations` (
 INSERT INTO `formations` (`id_formations`, `titre`, `lieu`, `description`, `date_debut`, `date_fin`) VALUES
 (1, 'BaccalaurÃ©at Professionnel SecrÃ©tariat', 'Adrienne Bolland - Poissy (78)', 'Administration', 'Sept - 2009', 'Juin - 2012'),
 (2, 'Web Force 3', 'Poisssy (78)', 'Apprentissage de langages Web', 'Sept - 2018', 'Juil - 2019'),
-(3, 'BEP', 'Adrienne Bolland', 'BEP  Administratif', 'Sept - 2009', 'Juin - 2011');
+(3, 'Brevet Etude Professionnel', 'Adrienne Bolland - Poissy(78)', 'Administratif', 'Sept - 2009', 'Juin - 2011');
 
 -- --------------------------------------------------------
 
@@ -132,10 +144,11 @@ CREATE TABLE `photo` (
 
 INSERT INTO `photo` (`id_photo`, `photo`, `details`) VALUES
 (1, 'http://localhost/Cours/SitePortfolio/image/Avatar.png', 'Avatar'),
-(19, 'http://localhost/Cours/SitePortfolio/image/php.jpg', 'PHP'),
-(25, 'http://localhost/Cours/SitePortfolio/image/gimp.jpeg', 'GIMP'),
-(26, 'http://localhost/Cours/SitePortfolio/image/js.jpg', 'Competence'),
-(27, 'http://localhost/Cours/SitePortfolio/image/html-css.jpg', 'Competence');
+(2, 'http://localhost/Cours/SitePortfolio/image/php.jpg', 'PHP'),
+(3, 'http://localhost/Cours/SitePortfolio/image/gimp.jpeg', 'GIMP'),
+(4, 'http://localhost/Cours/SitePortfolio/image/js.jpg', 'JS'),
+(5, 'http://localhost/Cours/SitePortfolio/image/html-css.jpg', 'HTML'),
+(6, 'http://localhost/Cours/SitePortfolio/image/5c8bc38f85af0-caplogy.jpg', 'Caplogy');
 
 -- --------------------------------------------------------
 
@@ -197,20 +210,19 @@ CREATE TABLE `utilisateur` (
   `code_postal` int(5) UNSIGNED ZEROFILL DEFAULT NULL,
   `ville` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `pays` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
-  `date_naissance` date DEFAULT NULL,
   `telephone` int(10) UNSIGNED ZEROFILL DEFAULT NULL,
   `email` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pseudo` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `mdp` varchar(12) CHARACTER SET utf8 DEFAULT NULL,
-  `site_web` varchar(50) CHARACTER SET utf8 DEFAULT NULL
+  `site_web` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `cv` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `adresse`, `code_postal`, `ville`, `pays`, `date_naissance`, `telephone`, `email`, `pseudo`, `mdp`, `site_web`) VALUES
-(1, 'Traore', 'Assa', '60 avenue Marechal Lyautey', 78300, 'Poissy', 'France', '1994-01-20', 0751573705, 'assa.traore@lepoles.com', 'Biss', '20011994', 'https://assatraorebtsam.wixsite.com/website');
+INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `adresse`, `code_postal`, `ville`, `pays`, `telephone`, `email`, `mdp`, `site_web`, `cv`) VALUES
+(1, 'Traore', 'Assa', '60 avenue Marechal Lyautey', 78300, 'Poissy', 'France', 0751573705, 'assa.traore@lepoles.com', '20011994', 'https://assatraorebtsam.wixsite.com/website', 'CV-Traore-Assa-Developpeur-Web.pdf');
 
 --
 -- Index pour les tables déchargées
@@ -221,6 +233,12 @@ INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `adresse`, `code_p
 --
 ALTER TABLE `commentaires`
   ADD PRIMARY KEY (`id_commentaires`);
+
+--
+-- Index pour la table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id_contact`);
 
 --
 -- Index pour la table `experiences`
@@ -272,7 +290,13 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
-  MODIFY `id_commentaires` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_commentaires` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id_contact` int(3) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `experiences`
@@ -296,7 +320,7 @@ ALTER TABLE `loisirs`
 -- AUTO_INCREMENT pour la table `photo`
 --
 ALTER TABLE `photo`
-  MODIFY `id_photo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_photo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `realisations`

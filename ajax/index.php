@@ -1,20 +1,21 @@
-<div class="container">
+<!-- <div class="container"> -->
 
     <?php
-    require_once('init/init.php');
+    // require_once('../init/header.php');
+    // header
+
+    // require_once('../init/init.php');
+    // BDD
     // var_dump($resultat);
 
     //------------------REQUETE RETOUR------------------------
     ?>
 
-
-    <section id="commentaires">
+    <main id="commentaires">
         <h2 class='display-4 text-center'>Commentaires</h2>
 
-        <!-- <div class="card"> -->
-
         <div class="card-header">
-            <h5 class="text-center">Votre avis m'interesse ! <br> Laissez un petit commentaire</h5>
+            <h5 class="text-center">Votre avis m'interesse ! <br> Lachez un petit commentaire</h5>
             <button type="submit" id="ajouter" class="btn btn-dark">Ajouter un commentaire</button>
         </div>
 
@@ -25,25 +26,27 @@
 
             function securiser($donnees)
             {
-                $donnees = trim($donnees);
-                $donnees = stripslashes($donnees);
-                $donnees = strip_tags($donnees);
+                $donnees = trim($donnees); // efface les espaces en trop
+                $donnees = strip_tags($donnees); //efface le HTML (ne s'affichera pas)
+                $donnees = stripslashes($donnees); //efface les \
+
                 return $donnees;
             }
 
-            $resultat = $bdd->query("SELECT pseudo, email, commentaire, date FROM commentaires ORDER BY date DESC LIMIT 6");
+            $resultat = $bdd->query("SELECT pseudo, email, commentaire, date FROM commentaires ORDER BY date DESC LIMIT 10");
             while ($commentaires = $resultat->fetch(PDO::FETCH_ASSOC)) :
-                // $new = htmlspecialchars($comm, ENT_QUOTES);
                 // var_dump($commentaires['pseudo'])
 
-             
 
                 $pseudo = securiser($commentaires['pseudo']);
                 $commentaire = securiser($commentaires['commentaire']);
                 ?>
 
-                <div class='card-body'>
+                <div class='card-body col-6'>
                     <blockquote class='blockquote'>
+                    <div class='blockquote-footer text-center'>
+                            <cite title='Source Title'> Commentaire posté le : <?= $commentaires['date'] ?> </cite>
+                        </div>
                         <p>
                             <div class='card'>
                                 <div class='card-body'>
@@ -54,17 +57,17 @@
                                 </div>
                             </div>
                         </p>
-                        <div class='blockquote-footer text-center'>
-                            <cite title='Source Title'> Commentaire poster le : <?= $commentaires['date'] ?></cite>
-                        </div>
+                        
                     </blockquote>
                 </div>
 
             <?php endwhile; ?>
-            <!-- </div> -->
+
         </div>
-    </section>
-</div>
+
+    </main>
+<!-- </div> -->
+<!-- div container -->
 
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script src="ajax/com.js"></script>

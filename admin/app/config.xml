@@ -1,9 +1,12 @@
 <?xml version="1.0"?>
 <config>
+<!-- Connexion a la BDD -->
     <host>localhost</host>
     <user>root</user>
     <password></password>
     <db>siteportfolio</db>
+
+<!-- Connexion aux tables de la BDD -->
     <table>utilisateur</table>
     <table2>competences</table2> 
     <table3>formations</table3> 
@@ -13,4 +16,5 @@
     <table7>realisations</table7> 
     <table8>photo</table8> 
     <table9>commentaires</table9> 
+    <table10>contact</table10> 
 </config>

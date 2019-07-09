@@ -12,9 +12,9 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css"
     integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
 <!-- CSS -->
-<!-- <?php //require_once('../init/style.php'); ?> -->
+<?php //require_once('../init/style.php'); ?>
 
-  <title>Site PortFolio Assa</title>
+  <title>Connexion</title>
 </head>
 
 

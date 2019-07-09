@@ -2,7 +2,7 @@
   
 
     body {
-        background: linear-gradient(to top, rgb(204, 166, 164), rgb(199, 102, 102));
+        background: #000014;
         color: white;
         width: 97%;
         margin: 0 auto;
@@ -144,10 +144,10 @@
     }
 
     .card {
-        background: linear-gradient(to top, rgb(204, 166, 164), blue);
+        background: linear-gradient(to left, rgb(204, 166, 164), rgb(199, 102, 102));
         background: ;
         /* background: #000014; */
-        border: 3px solid #000014;
+        border-radius: 3px solid #000014;
         width: 500px;
         margin: 5px;
         /* opacity: 0.6; */

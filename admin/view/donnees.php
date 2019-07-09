@@ -5,27 +5,27 @@
 // var_dump($donnees);
 // echo '<pre>';print_r($fields); echo '</pre>'; // description des champs 
 // echo '<pre>';print_r($donnees); echo '</pre>';
+function securiser($donnees)
+{
+    $donnees = trim($donnees); // efface les espaces en trop
+    $donnees = strip_tags($donnees); //efface le HTML (ne s'affichera pas)
+    $donnees = stripslashes($donnees); //efface les \
 
-
+    return $donnees;
+}
 ?>
 <div>
     <a href="?op=add" class="btn btn-larg btn-dark"><i class="fas fa-plus"></i> Ajouter</a>
     <br>
 </div> <br>
 
-
 <div class="row justify-content-center">
 
     <!----------- Récuperer les données interieur du tableau ----------->
     <?php
+
     foreach ($donnees as $value) :
-
-        // if ($fields == 'mdp') {
-        //     $value['Field']= password_hash($value, PASSWORD_DEFAULT);
-
-        // }
         ?>
-
         <div class="card">
             <div class="card-body">
                 <div>

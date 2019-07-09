@@ -56,7 +56,7 @@ class EntityLoisirsRepository
     public function save()
     {
         $id = isset($_GET['id']) ? $_GET['id'] : 'NULL'; // verifie si id n'est pas nul pour ajouter ou motifier
-        $q = $this->getDB()->query('REPLACE INTO ' . $this->table . '(id_' . $this->table . ',' .  implode(',', array_keys($_POST)). ') VALUES (' . $id . ',' . "'"  . implode("','", $_POST) . "'" . ')');
+        $q = $this->getDB()->query('REPLACE INTO ' . $this->table . '(id_' . $this->table . ',' .  implode(',', array_keys($_POST)). ') VALUES (' . $id . ',' . "'"  . implode("','",str_replace("'","\'", $_POST)) . "'" . ')');
     }
 
 /************ AFFICHER UN ELEMENT ************/

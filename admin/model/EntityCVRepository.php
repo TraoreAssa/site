@@ -56,11 +56,12 @@ class EntityCVRepository
     public function save()
     {
         $id = isset($_GET['id']) ? $_GET['id'] : 'NULL'; // verifie si id n'est pas nul pour ajouter ou motifier
-        $q = $this->getDB()->query('REPLACE INTO ' . $this->table . '(id_' . $this->table . ',' .  implode(',', array_keys($_POST)). ') VALUES (' . $id . ',' . "'"  . implode("','", $_POST) . "'" . ')');
+
+        $q = $this->getDB()->query('REPLACE INTO ' . $this->table . '(id_' . $this->table . ',' .  implode(',', array_keys($_POST)). ') VALUES (' . $id . ',' . "'"  . implode("','",str_replace("'","\'", $_POST)) . "'" . ')');
     }
 
 /************ AFFICHER UN ELEMENT ************/
-    public function select($id) // Méthode permetant de recuperer les données d'un   via id
+    public function select($id) // Méthode permetant de recuperer les données d'un élément  via id
     {
         $q = $this->getDb()->query("SELECT * FROM " . $this->table . " WHERE id_" . $this->table . "=" . (int) $id);
         $r = $q->fetch(\PDO::FETCH_ASSOC);

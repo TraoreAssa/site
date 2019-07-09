@@ -1,236 +1,201 @@
 <style type="text/css">
+    /* Reset */
+    * {
+        box-sizing: border-box;
+        /*ça bloque l'élement, le recentre et ça fait une marge*/
+    }
+
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+
     body {
-        background: linear-gradient(to top, rgb(204, 166, 164), rgb(199, 102, 102));
         color: white;
-        width: 99.8%;
-    }
-
-    /* NAV */
-    .menu {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        max-height: 0px;
-        overflow-y: hidden;
         text-align: center;
-
-    }
-
-    .menu li {
-        border-top: 1px solid #ccc;
-        width: 100%;
-    }
-
-    .menu li:hover {
-
-        cursor: pointer;
-
-    }
-
-    .menu a {
-        color: white;
-        text-decoration: none;
-        display: block;
-        width: 94%;
-        padding: 5px;
-    }
-
-    .menu a:hover {
-        color: pink;
-        font-size: 20px;
-    }
-
-    /* burger nav */
-    label.menuTitle {
-        text-align: left;
-        font-size: 30px;
-        height: 50px;
-        width: 40px;
-        margin-right: 1%;
-        display: block;
-        font-weight: bold;
-        cursor: pointer;
-        background: url(image/menu.png) no-repeat 100% 40%;
-        background-size: 44px 39px;
-        float: right;
-    }
-
-    .mainMenu {
-        display: block;
-        position: relative;
-        /* les éléments vont bougé -> relative permet de les faires bouger // *si pas de position relative .content va se mettre au dessus de la nav */
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        border-bottom: 1px solid #ccc;
-        box-shadow: 0 0 3px 5px;
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    input[name="panel"]:checked~.menu {
-        /*checked: lorsque l'élément est coché*/
-        max-height: 800px;
-        transition: 2s;
-    }
-
-    .clear {
-        clear: both;
-    }
-
-    nav a:hover {
-        background: #000014;
-        transition: 2s;
-        padding: 20px;
-        width: 100%;
-    }
-
-    /* Fin de la NAV */
-
-    .container {
-        overflow-y: hidden;
-        border-radius: 10px;
-        margin-top: 5px;
-        margin-top: 50px;
-        margin-bottom: 40px;
-        width: 100%;
-        height: 100%;
-        background-color: #000014;
-    }
-
-    footer {
-        box-shadow: 0 0 3px 5px;
-
     }
 
     section {
-        padding: 2px;
-        margin: 10px;    
-    }
- 
-    /* Button a droite */
-    .monter {
-        position: fixed;
-        background: transparent;
-        right: 20px;
-        cursor: pointer;
-        font-size: 200%;
-        color: slategray;
-        border: none;
-        bottom: 20px;
+        height: 100vh;
     }
 
-    /* FIN  */
+    /* Bas et haut correspondent a mes petit menu pour revoyer sur la page suivante au precedente */
+    .haut,
+    .bas {
+        font-size: 50px;
+        display: block;
+        color: white;
+        font-style: italic;
+    }
 
+    .bas {
+        position: absolute;
+        bottom: 0;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .bas i,
+    .haut i {
+        font-size: 15px;
+        margin: 0px;
+    }
+
+    main {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0px 15px;
+    }
+
+    a,
+    a:hover {
+        text-decoration: none;
+        color: inherit;
+    }
 
     h1 {
-        color: white;
-        margin-top: 20px;
-        font-size: 90px;
+        color: #000014;
+        font-size: 80px;
+        font-style: italic;
     }
 
     h2 {
-        color: white;
-        /* color: rgb(199, 102, 102); */
-        padding: 5px;
-
-    }
-
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
-
-    a:hover {
-        color: pink;
-        text-decoration: none;
+        font-size: 60px;
+        margin: 20px;
     }
 
     i {
-        color: grey;
-    }
-
-    i:hover {
-        color: blue;
-    }
-
-    /* bienvenue */
-    .site:hover {
         color: white;
-        font-size: 25px;
+        margin: 2px;
     }
 
+    /* Nav */
+    nav {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+        font-size: 150%;
+        padding-top:15px; 
+    }
+
+    nav li {
+        display: inline-block;
+        padding: 10px 10px;
+    }
+
+    nav li a {
+        text-transform: uppercase;
+    }
+
+    /* SECTIONS */
+    #profil,
+    #competences,
+    #contact{
+        position: relative;
+        background: linear-gradient(to top, rgb(204, 166, 164), rgb(199, 102, 102));
+    }
+
+    #experiences,
+    #formations,
+    footer {
+        position: relative;
+        background: #000014;
+    }
+
+    /* Cardre avec border */
     .card {
         background: transparent;
-        border: 2px solid white;
+        border: 5px solid pink;
+        /* padding: 5px; */
+        font-size: 18px; 
+        width: 16rem;
+        height: 16rem;
     }
 
-    /* PROFIL */
+    /* Section PROFIL */
     #profil .card {
+        /* cadre */
+        font-size: 15px;
         border-radius: 16px;
-        /* background: white; */
         position: relative;
         overflow: hidden;
+        /*cacher le contenu*/
         box-shadow: 0 5px 50px rgba(0, 0, 0, 0.85);
-        margin-top: 20px;
-            border: 2px solid white;
+        border: 2px solid white;
+        margin: auto;
+        top: 50px;
+        /* padding-bottom: 5px; */
+        margin-bottom: 60px;
+        width: 30rem; 
+        height:30rem;
 
     }
 
     #profil .card::before {
         content: "";
         position: absolute;
-        width: 100%;
+        width: 50%;
         height: 100%;
         background-color: #000014;
+        background-size: contain;
+        top: 0px;
+        left: 0px;
     }
 
-    #profil .card .img {
+    #profil .card .about {
+    /* interieur de ma card (About) */
         position: absolute;
         width: 100%;
         height: 100%;
         display: flex;
         top: 180px;
-
     }
 
-    #profil .card .img span {
-        /* width: 100%; */
+    #profil .card .about span {
         height: 100%;
         color: white;
-        font-size: 70px;
+        font-size: 75px;
         transition: 0.5s;
-        bottom: 950px;
-        padding: 0px;
-        /* : 20px; */
     }
 
-    #profil .card .img span:nth-child(1) {
+    #profil .card .about span:nth-child(1) {
         transition-delay: 0s;
         background-position: 0;
-
     }
 
-    #profil .card .img span:nth-child(2) {
+    #profil .card .about span:nth-child(2) {
         transition-delay: 0.1s;
         background-position: 33.33%;
     }
 
-    #profil .card .img span:nth-child(3) {
+    #profil .card .about span:nth-child(3) {
         transition-delay: 0.2s;
         background-position: 66.66%;
     }
 
-    #profil .card .img span:nth-child(4) {
+    #profil .card .about span:nth-child(4) {
         transition-delay: 0.3s;
         background-position: 100%;
     }
 
-    #profil .card:hover .img>span {
+    #profil .card:hover .about>span {
         transform: translateY(-100%);
     }
 
@@ -241,10 +206,9 @@
         align-items: center;
         flex-direction: column;
         color: white;
-        padding: 20px 20px;
-        width: 100%;
-        height: 100%;
-        transform: translateY(100%);
+        transform: translateY(95%);
+        width: 90%;
+        margin: 0 auto;
     }
 
     #profil .card:hover .content {
@@ -253,127 +217,143 @@
         transition-delay: 0.1s;
     }
 
-    span {
-        padding: 0px;
+    /* Button télécharger CV */
+    .button {
+        color: #000014;
+        background: white;
+        border: none;
+        font-size: 14px;
     }
-
     /* FIN DU PROFIL */
 
-
-    /* Effet survol avec transition et filtres COMPETENCES */
+    /* Section COMPETENCES */
     .comp li {
         list-style: none;
-        width: 241px;
-        height: 250px;
-        margin: 15px;
+        height: 350px;
+        margin: 50px 0px auto;
     }
 
     .comp img {
-        position: absolute;
         z-index: 1;
-        height: 250px;
+        height: 300px;
         transition: .5s cubic-bezier(0, 3, .4, 1);
     }
 
     .comp li:hover img {
-        z-index: 2;
-        transform: scale(1.5);
+        z-index: 2;/*mettre l'image au dessus des autres*/
+        transform: scale(1.8);/* effet zome */
         cursor: pointer;
+    }
+
+    .comp .card{
+        border: none;
+        height: 80%;
+        margin: 0px 100px;
     }
 
     .comp:hover li:not(:hover) img {
         /*je mets ai survol de la classe comp je met les image en gris et en flou */
         filter: grayscale(1) blur(8px);
-
     }
-
     /* Fin des compétences */
 
-    #commentaires .blockquote{
-            width: 100%;
-            
-        }
+    /* Section Formations */
+    #formations .card {
+        width: 18rem;
+        height:18rem;
+    }
+    /* Fin des Formations */
+
+    /* Section Commentaires */
+    #commentaires .blockquote {
+        width: 80%;
+    }
+    /* Fin des commentaires */
+
+    /* Section CONTACT */
     iframe {
-        box-shadow: 5px 5px 20px 3px pink;
+        box-shadow: 2px 2px 3px 1px pink;
         width: 80%;
         height: 300px;
-        border:0;
+        border: 0;
+    }
+    /* Fin de contact */
+
+    /* Section AVIS */
+    #commentaires .card {
+        font-size: 20px; 
+        width: 40rem;
+        height: 100%;
+    }
+    /* fin  AVIS */
+
+    /* Footer */
+    footer span {
+        color: white;
+        font-size: 14px;
     }
 
+    /*********************** RESPONSIVE ********************/
+     @media only screen and (max-width: 1350px) {
 
-    /* V mobile */
-    @media screen and (min-width:970px) {
-
-        body{
-            margin: 0 auto;
+        section{
+            height: 90%;
+        }
+        main{
+            bottom: 20px;
+        }
+        /*H2*/
+        .display-4{
+            font-size: 3rem;   
         }
 
-        label.menuTitle {
-            display: none;
+        /* Mon poste */
+        .titre {
+            font-size: 60px;
+            padding: 0;
+            margin: 0;          
         }
 
-        .menu,
-        .menu li {
-            padding: 2%;
-            box-sizing: border-box;
-            /*permet de bloquer un block à une certaine taille en padding décale avec border-box c'est bloqué et le padding se fait à l'intérieur*/
+        .comp img { 
+            height: 200px;
         }
-
-        .menu li,
-        .menu a {
+        .comp li {
+            width: 90%;
+            height: 250px;
             display: inline;
-            border: none;
+            padding: 0px;
+        }
+        .comp ul {
+            width: 90%;
+            padding: 0px;
         }
 
-        h1{
-            /* font-size: 15px; */
+        #profil .card {
+            margin-bottom: 70px;
+            top:20px;
+            bottom: 10px;
+            /* height: 40%; */
+            width: 90%;
         }
-
-    }
-
-    @media (max-width: 650px)
-    {
-        body{
-            margin: 0 auto;
-        }
-        iframe{
-            width: 300px;
+        #profil h2{
+            font-size: 30px;
         }
         
-        .section {
-            width: 70%;
-            justify: center;
+        nav li {
+            padding: 25px 4px;
         }
 
-        /* Responsive */
-
-
-        body>p {
-            font-size: 5px;
-            text-align: justify;
-        }
-        
-        h1{
-            font-size: 300%;
+        nav li a {
+            font-size: 15px;
         }
 
-        body>p:after {
-            opacity: .8
+        .bas,
+        .haut {
+            font-size: 40px;
         }
 
-        header {
-            display: inline-block;
-            width: 100%;
+        .card {
+            padding: 2px
         }
-
-        #commentaires .row{
-            display: block;
-            width: 100%;
-            
-        }
-        .col{
-            width: 100%;
-        }
-
-    }
+    } 
 </style>
